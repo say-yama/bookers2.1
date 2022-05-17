@@ -1,8 +1,14 @@
 <% @books.each do |book| %>
  <div>
    <p>投稿ユーザー画像</p>
-   <p>本のタイトル:<%= book.title %></p>
-   <p>感想:<%= book.body %></p>
    <p>ユーザーネーム:<%= book.user.name %></p>
+   <p>本のタイトル
+    <span>
+      <%= link_to book.title,book_path(book.id) %>
+    </span>
+   </p>
+   <p>感想:<%= book.body %></p>
+   
  </div>
+ 
 <% end %>
